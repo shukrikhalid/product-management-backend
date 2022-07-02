@@ -10,6 +10,7 @@ const productController = {
     show: async (req, res) => {
         Product.findById(req.params.id, (err, product) => {
             if (err) return res.status(400).json({ status:false, message:`Product id: ${req.params.id} is not found`});
+            if (!product) return res.status(400).json({ status:false, message:`Product id: ${req.params.id} is not found`});
             res.json({ status:true, message:"Get product", product})
         })
     },
