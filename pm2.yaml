@@ -2,7 +2,7 @@
 apps:
   - name      : 'product-mngt-server'
     script    : ./index.js
-    instances : 1
+    instances : 10
     exec_mode : cluster
     watch     : true
     ignore_watch: ["node_modules", "log"]

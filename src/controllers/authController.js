@@ -5,10 +5,12 @@ moment.tz('Asia/Kuala_Lumpur')
 const USERNAME = 'admin'
 const PASSWORD = '123456'
 
+const log = []
 
 const productController = {
     login: (req, res) => {
         if(req.body.username === USERNAME && req.body.password === PASSWORD){
+            log.push('req.body.username')
             //Note: this should store & query from DB. password must store in hash
             const params = {
                 username: req.body.username,

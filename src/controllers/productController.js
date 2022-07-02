@@ -2,9 +2,9 @@ const Product = require('../models/product')
 
 const productController = {
     index: async (req, res) => {
-        Product.find({}, (err, product) => {
-            if (err) return res.status(400).json({ status:false, message:`Product id: ${req.params.id} is not found`});
-            res.json({ status:true, message:"List product", product})
+        Product.find({}, (err, products) => {
+            if (err) return res.status(400).json({ status:false, message:`Get products error`});
+            res.json({ status:true, message:"List products", products})
         })
     },
     show: async (req, res) => {
